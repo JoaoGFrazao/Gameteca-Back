@@ -54,9 +54,7 @@ def add():
         description: A mecânica principal do jogo.
     responses:
       200:
-        description: Jogo adicionado com sucesso
-      302:
-        description: Redireciona para a página principal após adicionar o jogo.
+        description: Boardgame adicionado com sucesso
       400:
         description: Erro se alguma informação faltar ou alguma constraint for desrespeitada.
     """
@@ -78,7 +76,7 @@ def add():
       db.session.add(bg)
       db.session.commit()
 
-    return render_template("home.html")
+    return "Boardgame adicionado com sucesso"
 
 
 #Rota para listar todos os boardgames do BD
